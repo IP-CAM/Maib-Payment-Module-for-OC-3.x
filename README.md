@@ -20,7 +20,7 @@ In order to make real payments you must make at least one successful transaction
 
 **Three currencies**: MDL / USD / EUR (depending on your Project settings).
 
-**Payment refund**: update the order status (see _refund.png_) to the selected status for _Refunded payment_ in **maib** extension settings (see _settings.png_). The payment amount will be returned to the customer's card.
+**Payment refund**: To refund the payment it is necessary to update the order status (see _refund.png_) to the selected status for _Refunded payment_ in **maib** extension settings (see _settings.png_). The payment amount will be returned to the customer's card.
 
 ## Requirements
 - Registration on the maibmerchants.md
