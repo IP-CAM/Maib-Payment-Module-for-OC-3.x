@@ -1,7 +1,7 @@
 [![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
 # Maib Payment Gateway pentru Opencart v. 3.x
-Acest plugin vă permite să integrați magazinul dvs. online cu noul **API e-commerce** de la **maib** pentru a accepta plăți online (Visa / Mastercard / Google Pay / Apple Pay).
+Acest modul vă permite să integrați magazinul dvs. online cu noul **API e-commerce** de la **maib** pentru a accepta plăți online (Visa / Mastercard / Google Pay / Apple Pay).
 
 ## Descriere
 Pentru a avea posibilitatea de a folosi acest plugin trebuie să fiți înregistrat pe platforma [maibmerchants.md](https://maibmerchants.md).
