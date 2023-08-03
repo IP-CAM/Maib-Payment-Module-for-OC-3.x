@@ -1,64 +1,63 @@
 [![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
 # Maib Payment Gateway pentru Opencart v. 3.x
-Acceptă plăți cu Visa / Mastercard / Apple Pay / Google Pay pe site-ul tău cu extensia Maib Payment Gateway pentru Opencart v. 3.x
+Acest plugin vă permite să integrați magazinul dvs. online cu noul **API e-commerce** de la **maib** pentru a accepta plăți online (Visa / Mastercard / Google Pay / Apple Pay).
 
-## Description
-To be able to use this plugin you must be registered on the [maibmerchants.md](https://maibmerchants.md) platform.
+## Descriere
+Pentru a avea posibilitatea de a folosi acest plugin trebuie să fiți înregistrat pe platforma [maibmerchants.md](https://maibmerchants.md).
 
-Immediately after registration, you will be able to make payments in the test environment with the access data from the Test Project.
+Imediat după înregistrare, veți putea efectua plăți în mediul de test cu datele de acces din Proiectul de Test.
 
-In order to make real payments you must make at least one successful transaction in the test environment and complete the necessary steps to activate the Production Project.
+Pentru a efectua plăți reale trebuie să efectuați cel puțin o tranzacție reușită în mediul de test și să parcurgeți pașii necesari pentru activarea Proiectului de producție.
 
 ### Steps to activate the Production Project
-1. Completed Profile
-2. Validated Profile
-3. E-commerce contract 
+1. Profil completat pe platforma maibmerchants
+2. Profil validat
+3. Contract e-commerce
 
-## Functional
-**Online payments**: Visa / Mastercard / Apple Pay / Google Pay.
+## Funcțional
+**Plăți online**: Visa / Mastercard / Apple Pay / Google Pay.
 
-**Three currencies**: MDL / USD / EUR (depending on your Project settings).
+**Trei valute**: MDL / USD / EUR (în dependență de setările Proiectului dvs).
 
-**Payment refund**: update the order status (see _refund.png_) to the selected status for _Refunded payment_ in **maib** extension settings (see _settings.png_). The payment amount will be returned to the customer's card.
+**Returnare plată**: Pentru a returna plata, este necesar să actualizați starea comenzii (vedeți _refund.png_) la starea selectată pentru _Plată returnată_ în setările extensiei **maib** (vedeți _settings.png_). Suma plății va fi returnată pe cardul clientului.
 
-## Requirements
-- Registration on the maibmerchants.md
+## Cerințe 
+- Înregistrare pe platforma maibmerchants.md
 - Opencart v. 3.x
-- _curl_ and _json_ extensions enabled
+- extensiile _curl_ and _json_ activate
 
-## Installation
-1. Download the extension file from Github or Opencart repository (_maib3.ocmod.zip_).
-2. In the opencart admin panel, go to _Extensions > Extension Installer_.
-3. Click the _Upload_ button and select the extension file. Once the upload is complete, OpenCart will begin the installation process.
-4. Go to _Extensions > Modifications_ and click the _Refresh_ button.
-5. Go to _Extensions > Extensions_ and choose the _Payments_ extensions type. You should see **maib** extension in the list.
-6. Click the _Install_ button.
-7. Click the _Edit_ button for extension settings.
+## Instalare
+1. Descărcați modulul de pe Github sau din repozitoriu Opencart (_maib3.ocmod.zip_).
+2. În panoul de administrare accesați _Extensii > Instalator Extensii_.
+3. Apăsați butonul _Încarcă_ și selectați modulul descărcat. Odată ce încărcarea este finalizată, OpenCart va începe procesul de instalare.
+4. Accesați _Extensii > Modificări_ și apăsați butonul _Reîmprospătează_.
+5. Accesați _Extensii > Extensii_ și alegeți tipul de extensie _Metode de plată_. You should see **maib** extension in the list.
+6. Alegeți extensia **maib** din listă și apăsați butonul _Instalează_.
+7. Apăsați butonul Editează pentru setarea extensiei.
 
-## Settings
-1. Title - title of the payment method displayed to the customer on the checkout page.
-2. Status - enable/disable extension.
-3. Debug - enable/disable extension logs in _maib.log_ file.
-4. Sort Order - payment method sort order on the checkout page.
-5. Geo Zone - select the geographic regions to which the payment method will apply.
-6. Project ID - Project ID from maibmerchants.md
-7. Project Secret - Project Secret from maibmerchants.md. It is available after project activation.
-8. Signature Key - Signature Key for validating notifications on Callback URL. It is available after project activation.
-9. Ok URL / Fail URL / Callback URL - add links in the respective fields of the Project settings in maibmerchants.
-10. Order status settings: Pending payment - Order status when payment is in pending.
-11. Order status settings: Completed payment - Order status when payment is successfully completed.
-12. Order status settings: Failed payment - Order status when payment failed.
-13. Order status settings: Refunded payment - Order status when payment is refunded. For payment refund, update the order status to the this selected status (see _refund.png_).
+## Setări
+1. Titlu - titlul metodei de plată afișată clientului pe pagina de finalizare a comenzii.
+2. Stare - activați/dezactivați extensia.
+3. Depanare - activați/dezactivați log-urile extensiei în fișierul _maib.log_.
+4. Ordinea de sortare - metoda de plată sortează ordinea de pe pagina de finalizare a comenzii.
+5. Zona geografică - selectați regiunile geografice pentru care se va aplica metoda de plată.
+6. Project ID - Project ID din maibmerchants.md
+7. Project Secret - Project Secret din maibmerchants.md. Este disponibil după activarea proiectului.
+8. Signature Key - Signature Key pentru validarea notificărilor pe Callback URL. Este disponibil după activarea proiectului.
+9. Ok URL / Fail URL / Callback URL - adăugați aceste linkuri în câmpurile respective ale setărilor Proiectului în maibmerchants.
+10. Setãri stare comandã: Plată în așteptare - Starea comenzii când plata este în așteptare.
+11. Setãri stare comandã: Plată cu succes - Starea comenzii când plata este finalizată cu succes.
+12. Setãri stare comandã: Plată eșuată - Starea comenzii când plata a eșuat.
+13. Setãri stare comandã: Platã returnatã - Starea comenzii când plata este returnată. Pentru returnarea plății, actualizați starea comenzii la starea selectată aici (vedeți _refund.png_).
 
-## Troubleshooting
-Enable debug mode in the plugin settings and access the log file.
+## Depanare
+Activați depanarea în setările extensiei și accesați fișierul cu log-uri.
 
-If you require further assistance, please don't hesitate to contact the **maib** ecommerce support team by sending an email to ecom@maib.md. 
+Dacă aveți nevoie de asistență suplimentară, vă rugăm să nu ezitați să contactați echipa de asistență pentru comerț electronic **maib**, trimițând un e-mail la ecom@maib.md.
 
-In your email, make sure to include the following information:
-- Merchant name
+În e-mailul dvs., asigurați-vă că includeți următoarele informații:
+- Numele comerciantului
 - Project ID
-- Date and time of the transaction with errors
-- Errors from log file
-
+- Data și ora tranzacției cu erori
+- Erori din fișierul cu log-uri
