@@ -1,7 +1,7 @@
 [![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
 # Модуль Maib Payment Gateway для Opencart v. 3.x
-Этот плагин позволяет интегрировать ваш Opencart интернет-магазин с **maib e-commerce API ** для приема онлайн-платежей (Visa/Mastercard/Google Pay/Apple Pay).
+Этот плагин позволяет интегрировать ваш Opencart интернет-магазин с **maib e-commerce API** для приема онлайн-платежей (Visa/Mastercard/Google Pay/Apple Pay).
 
 ## Описание
 Для использования этого плагина вы должны быть зарегистрированы на платформе [maibmerchants.md](https://maibmerchants.md).
