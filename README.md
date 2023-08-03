@@ -44,7 +44,7 @@ In order to make real payments you must make at least one successful transaction
 ## Settings
 1. Title - title of the payment method displayed to the customer on the checkout page.
 2. Status - enable/disable extension.
-3. Debug - enable/disable extension logs in maib.log file.
+3. Debug - enable/disable extension logs in _maib.log_ file.
 4. Sort Order - payment method sort order on the checkout page.
 5. Geo Zone - select the geographic regions to which the payment method will apply.
 6. Project ID - Project ID from maibmerchants.md
