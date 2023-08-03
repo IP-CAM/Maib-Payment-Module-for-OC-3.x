@@ -10,7 +10,7 @@ Imediat după înregistrare, veți putea efectua plăți în mediul de test cu d
 
 Pentru a efectua plăți reale trebuie să efectuați cel puțin o tranzacție reușită în mediul de test și să parcurgeți pașii necesari pentru activarea Proiectului de producție.
 
-### Steps to activate the Production Project
+### Pași pentru activarea Proiectului de Producție.
 1. Profil completat pe platforma maibmerchants
 2. Profil validat
 3. Contract e-commerce
@@ -38,18 +38,18 @@ Pentru a efectua plăți reale trebuie să efectuați cel puțin o tranzacție r
 
 ## Setări
 1. Titlu - titlul metodei de plată afișată clientului pe pagina de finalizare a comenzii.
-2. Stare - activați/dezactivați extensia.
-3. Depanare - activați/dezactivați log-urile extensiei în fișierul _maib.log_.
-4. Ordinea de sortare - metoda de plată sortează ordinea de pe pagina de finalizare a comenzii.
+2. Stare - activare/dezactivare extensie.
+3. Depanare - activare/dezactivare log-urile extensiei în fișierul _maib.log_.
+4. Ordinea de sortare - ordinea de sortare a metodei de plată pe pagina de finalizare a comenzii.
 5. Zona geografică - selectați regiunile geografice pentru care se va aplica metoda de plată.
 6. Project ID - Project ID din maibmerchants.md
 7. Project Secret - Project Secret din maibmerchants.md. Este disponibil după activarea proiectului.
 8. Signature Key - Signature Key pentru validarea notificărilor pe Callback URL. Este disponibil după activarea proiectului.
-9. Ok URL / Fail URL / Callback URL - adăugați aceste linkuri în câmpurile respective ale setărilor Proiectului în maibmerchants.
-10. Setãri stare comandã: Plată în așteptare - Starea comenzii când plata este în așteptare.
-11. Setãri stare comandã: Plată cu succes - Starea comenzii când plata este finalizată cu succes.
-12. Setãri stare comandã: Plată eșuată - Starea comenzii când plata a eșuat.
-13. Setãri stare comandã: Platã returnatã - Starea comenzii când plata este returnată. Pentru returnarea plății, actualizați starea comenzii la starea selectată aici (vedeți _refund.png_).
+9. Ok URL / Fail URL / Callback URL - adăugați aceste link-uri în câmpurile respective ale setărilor Proiectului în maibmerchants.
+10. Plată în așteptare - Starea comenzii când plata este în așteptare.
+11. Plată cu succes - Starea comenzii când plata este finalizată cu succes.
+12. Plată eșuată - Starea comenzii când plata a eșuat.
+13. Platã returnatã - Starea comenzii când plata este returnată. Pentru returnarea plății, actualizați starea comenzii la starea selectată aici (vedeți _refund.png_).
 
 ## Depanare
 Activați depanarea în setările extensiei și accesați fișierul cu log-uri.
