@@ -1,3 +1,5 @@
+[![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
+
 # Maib Payment Extension for Opencart v. 3
 Accept Visa / Mastercard / Apple Pay / Google Pay on your store with the Maib Payment Extension for Opencart v. 3
 
