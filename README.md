@@ -1,7 +1,7 @@
 [![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
-# Maib Gateway Payment Module for Opencart v. 3.x
-Accept Visa / Mastercard / Apple Pay / Google Pay on your store with the Maib Gateway Payment Module for Opencart v. 3.x
+# Maib Payment Gateway Module for Opencart v. 3.x
+Accept Visa / Mastercard / Apple Pay / Google Pay on your store with the Maib Payment Gateway Module for Opencart v. 3.x
 
 ## Description
 To be able to use this plugin you must be registered on the [maibmerchants.md](https://maibmerchants.md) platform.
