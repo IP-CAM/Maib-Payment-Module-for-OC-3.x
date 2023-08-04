@@ -36,20 +36,20 @@
 6. Нажмите кнопку _Установить_.
 7. Нажмите кнопку _Изменить_ для настроек расширения.
 
-## Settings
-1. Title - title of the payment method displayed to the customer on the checkout page.
-2. Status - enable/disable extension.
-3. Debug - enable/disable extension logs in _maib.log_ file.
-4. Sort Order - payment method sort order on the checkout page.
-5. Geo Zone - select the geographic regions to which the payment method will apply.
-6. Project ID - Project ID from maibmerchants.md
-7. Project Secret - Project Secret from maibmerchants.md. It is available after project activation.
-8. Signature Key - Signature Key for validating notifications on Callback URL. It is available after project activation.
-9. Ok URL / Fail URL / Callback URL - add links in the respective fields of the Project settings in maibmerchants.
-10. Order status settings: Pending payment - Order status when payment is in pending.
-11. Order status settings: Completed payment - Order status when payment is successfully completed.
-12. Order status settings: Failed payment - Order status when payment failed.
-13. Order status settings: Refunded payment - Order status when payment is refunded. For payment refund, update the order status to the this selected status (see _refund.png_).
+## Настройки
+1. Заголовок — название способа оплаты, отображаемое покупателю на странице оформления заказа.
+2. Статус - включить/отключить расширение.
+3. Отладка - включить/отключить логи расширений в файле _maib.log_.
+4. Порядок сортировки - порядок сортировки способа оплаты на странице оформления заказа.
+5. Геозона — выберите географические регионы, к которым будет применяться способ оплаты.
+6. Project ID - Project ID из Проекта (Тестовый или Производственный) в maibmerchants.
+7. Project Secret -  Project Secret из Проекта (Тестовый или Производственный) в maibmerchants. Доступен после активации проекта.
+8. Signature Key — Signature Key из Проекта (Тестовый или Производственный) в maibmerchants. Доступен после активации проекта.
+9. Ok URL / Fail URL / Callback URL - добавьте эти ссылки в соответствующие поля в настройки Проекта в maibmerchants.
+10. Настройки статуса заказа: Платеж в ожидании - Статус заказа, когда платеж находится в ожидании.
+11. Настройки статуса заказа: Успешная оплата - Статус заказа после успешного завершения платежа.
+12. Настройки статуса заказа: Неуспешная оплата - Статус заказа при ошибке оплаты.
+13. Настройки статуса заказа: Возврат платежа - Статус заказа при возврате платежа. Для возврата платежа обновите статус заказа до этого выбранного статуса (см. _refund.png_).
 
 ## Troubleshooting
 Enable debug mode in the plugin settings and access the log file.
