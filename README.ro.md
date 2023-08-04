@@ -10,7 +10,7 @@ Imediat după înregistrare, veți putea efectua plăți în mediul de test cu d
 
 Pentru a efectua plăți reale trebuie să efectuați cel puțin o tranzacție reușită în mediul de test și să parcurgeți pașii necesari pentru activarea Proiectului de producție.
 
-### Pași pentru activarea Proiectului de Producție.
+### Pași pentru activarea Proiectului de Producție
 1. Profil completat pe platforma maibmerchants
 2. Profil validat
 3. Contract e-commerce
