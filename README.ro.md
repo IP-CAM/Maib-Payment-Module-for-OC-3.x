@@ -54,7 +54,7 @@ Pentru a efectua plăți reale trebuie să efectuați cel puțin o tranzacție r
 ## Depanare
 Activați depanarea în setările extensiei și accesați fișierul cu log-uri.
 
-Dacă aveți nevoie de asistență suplimentară, vă rugăm să nu ezitați să contactați echipa de asistență pentru comerț electronic **maib**, trimițând un e-mail la ecom@maib.md.
+Dacă aveți nevoie de asistență suplimentară, vă rugăm să nu ezitați să contactați echipa de asistență ecommerce **maib**, expediind un e-mail la ecom@maib.md.
 
 În e-mailul dvs., asigurați-vă că includeți următoarele informații:
 - Numele comerciantului
