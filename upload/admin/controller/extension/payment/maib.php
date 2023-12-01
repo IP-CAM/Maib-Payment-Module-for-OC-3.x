@@ -21,10 +21,15 @@ class ControllerExtensionPaymentMaib extends Controller {
 		
 		$this->load->model('setting/setting');
 		if ($this->request->server['REQUEST_METHOD'] == 'POST' && $this->validate()) {
+		
+			$this->cache->delete("access_token");
+			$this->cache->delete("access_token_expires");
+
 			$this->model_setting_setting->editSetting('payment_maib', $this->request->post);
 			$this->session->data['success'] = $this->language->get('text_success');
 			$this->response->redirect($this->url->link('marketplace/extension', 'user_token='
 				. $this->session->data['user_token'] . '&type=payment', true));
+				
 		}
 	
 		$data['breadcrumbs'] = $this->getBreadCrumbs();
@@ -46,8 +51,8 @@ class ControllerExtensionPaymentMaib extends Controller {
 				$this->load->model('localisation/geo_zone');
 		
 		$catalog = $this->request->server['HTTPS'] ? HTTPS_CATALOG : HTTP_CATALOG; 
-        $data['ok_url'] = $catalog . 'index.php?route=extension/payment/maib/ok';
-        $data['fail_url'] = $catalog . 'index.php?route=extension/payment/maib/fail';
+        	$data['ok_url'] = $catalog . 'index.php?route=extension/payment/maib/ok';
+        	$data['fail_url'] = $catalog . 'index.php?route=extension/payment/maib/fail';
 		$data['callback_url'] = $catalog . 'index.php?route=extension/payment/maib/callback';
 	
 		$data['geo_zones'] = $this->model_localisation_geo_zone->getGeoZones();
@@ -126,7 +131,7 @@ class ControllerExtensionPaymentMaib extends Controller {
 	
 	private function getDefaults() {
 		return array(
-            'payment_maib_title' => 'maib (Visa / Mastercard / Apple Pay / Google Pay)',
+           		'payment_maib_title' => 'maib (Visa / Mastercard / Apple Pay / Google Pay)',
 			'payment_maib_status' => 1,
 			'payment_maib_debug' => 0,
 			'payment_maib_sort_order' => 0,
