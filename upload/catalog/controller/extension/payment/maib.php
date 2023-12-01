@@ -60,12 +60,8 @@ class ControllerExtensionPaymentMaib extends Controller
         $order_info = $this->model_checkout_order->getOrder($order_id);
         $lang = substr($this->session->data["language"], 0, 2);
 
-        $ok_url = html_entity_decode(
-            $this->url->link("extension/payment/maib/ok", "payId=", true)
-        );
-        $fail_url = html_entity_decode(
-            $this->url->link("extension/payment/maib/fail", "payId=", true)
-        );
+        $ok_url = $this->url->link("extension/payment/maib/ok");
+        $fail_url = $this->url->link("extension/payment/maib/fail");
         $callback_url = $this->url->link("extension/payment/maib/callback");
 
         $amount = $order_info["total"] * $order_info['currency_value'];
@@ -177,8 +173,7 @@ class ControllerExtensionPaymentMaib extends Controller
         ) {
             $access_token = $this->cache->get("access_token");
             $this->logIfDebug(
-                "Access token from cache: " . $access_token,
-                "info"
+                "Succesful received Access Token from cache."
             );
             return $access_token;
         }
@@ -190,8 +185,7 @@ class ControllerExtensionPaymentMaib extends Controller
                 $project_secret
             );
             $logMessage = sprintf(
-                "Response from Access Token: %s",
-                json_encode($response, JSON_PRETTY_PRINT)
+                "Succesful received Access Token from maib API"
             );
             $this->logIfDebug($logMessage, "info");
             $access_token = $response->accessToken;
@@ -362,10 +356,7 @@ class ControllerExtensionPaymentMaib extends Controller
             isset($this->request->get["payId"]) &&
             isset($this->request->get["orderId"])
         ) {
-            $payId = substr(
-                $this->request->get["payId"],
-                strpos($this->request->get["payId"], "=") + 1
-            );
+            $payId = $this->request->get["payId"];
             $orderId = (int) $this->request->get["orderId"];
 
             $this->logIfDebug(
@@ -378,20 +369,9 @@ class ControllerExtensionPaymentMaib extends Controller
             $order_info = $this->model_checkout_order->getOrder($orderId);
 
             if ($order_info) {
-                if (
-                    $order_info["order_status_id"] ==
-                    $this->config->get("payment_maib_order_fail_status_id")
-                ) {
-                    $this->response->redirect(
-                        $this->url->link("checkout/failure", "", true)
-                    );
-                } else {
-                    $this->send_payment_info_request(
-                        $payId,
-                        $this->getAccessToken(),
-                        $orderId
-                    );
-                }
+                $this->response->redirect(
+                    $this->url->link("checkout/failure", "", true)
+                );
             } else {
                 $this->logIfDebug("Fail URL: Order not found.", "error");
                 $this->session->data["error"] = $this->language->get(
@@ -425,10 +405,7 @@ class ControllerExtensionPaymentMaib extends Controller
             isset($this->request->get["payId"]) &&
             isset($this->request->get["orderId"])
         ) {
-            $payId = substr(
-                $this->request->get["payId"],
-                strpos($this->request->get["payId"], "=") + 1
-            );
+            $payId = $this->request->get["payId"];
             $orderId = (int) $this->request->get["orderId"];
 
             $this->logIfDebug(
@@ -441,20 +418,9 @@ class ControllerExtensionPaymentMaib extends Controller
             $order_info = $this->model_checkout_order->getOrder($orderId);
 
             if ($order_info) {
-                if (
-                    $order_info["order_status_id"] ==
-                    $this->config->get("payment_maib_order_success_status_id")
-                ) {
-                    $this->response->redirect(
-                        $this->url->link("checkout/success", "", true)
-                    );
-                } else {
-                    $this->send_payment_info_request(
-                        $payId,
-                        $this->getAccessToken(),
-                        $orderId
-                    );
-                }
+                $this->response->redirect(
+                    $this->url->link("checkout/success", "", true)
+                );
             } else {
                 $this->logIfDebug("Ok URL: Order not found.", "error");
                 $this->session->data["error"] = $this->language->get(
@@ -571,9 +537,17 @@ class ControllerExtensionPaymentMaib extends Controller
 		}
 
 		list($key, $pay_id) = $explode;
-
 		$params = ['payId' => strval($pay_id)];
-
+        
+		$this->logIfDebug(
+            sprintf(
+                "Initiate Refund Payment Request to maib API, pay_id: %s, order_id: %d",
+                $pay_id,
+                $order_id
+            ),
+            "info"
+        );		
+		
 		try {
 			// Initiate Refund Payment Request to maib API
 			$response = MaibApiRequest::create()->refund(
@@ -592,7 +566,7 @@ class ControllerExtensionPaymentMaib extends Controller
 
 			if ($response && $response->status === "OK") {
 				$order_status_id = $this->config->get("payment_maib_order_refund_status_id");
-				$comment = "Success_Refunded";
+				$comment = "Successfully_Refunded";
 				$notify = 1;
 				$this->logIfDebug(strtr('Full refunded payment @payid for order @orderid', [
 					'@payid' => $pay_id,
@@ -643,18 +617,20 @@ class ControllerExtensionPaymentMaib extends Controller
 
 	
     // Get the client's IP address
-    private function getClientIp()
-    {
-        if (!empty($this->request->server["HTTP_CLIENT_IP"])) {
-            return $this->request->server["HTTP_CLIENT_IP"];
-        } elseif (!empty($this->request->server["HTTP_X_FORWARDED_FOR"])) {
-            return $this->request->server["HTTP_X_FORWARDED_FOR"];
-        } elseif (!empty($this->request->server["REMOTE_ADDR"])) {
-            return $this->request->server["REMOTE_ADDR"];
-        } else {
-            return "127.0.0.1";
-        }
-    }
+	private function getClientIp()
+	{
+		if (!empty($this->request->server["HTTP_CLIENT_IP"])) {
+			return $this->request->server["HTTP_CLIENT_IP"];
+		} elseif (!empty($this->request->server["HTTP_X_FORWARDED_FOR"])) {
+			// Split the comma-separated list and return the first IP address
+			$ipList = explode(",", $this->request->server["HTTP_X_FORWARDED_FOR"]);
+			return trim($ipList[0]);
+		} elseif (!empty($this->request->server["REMOTE_ADDR"])) {
+			return $this->request->server["REMOTE_ADDR"];
+		} else {
+			return "127.0.0.1";
+		}
+	}
 
     // Log messages if debug mode is enabled
     private function logIfDebug($message, $type = "info")
