@@ -5,8 +5,11 @@ Accept Visa / Mastercard / Apple Pay / Google Pay on your store with the Maib Pa
 
 ## Description
 You can familiarize yourself with the integration steps and website requirements [here](https://docs.maibmerchants.md/en/integration-steps-and-requirements).
+
 To test the integration, you will need access to a Test Project (Project ID / Project Secret / Signature Key). For this, please submit a request to the email address: ecom@maib.md.
+
 To process real payments, you must have the e-commerce contract signed and complete at least one successful transaction using the Test Project data and test card details.
+
 After signing the contract, you will receive access to the maibmerchants platform and be able to activate the Production Project.
 
 ### Steps to activate the Production Project
