@@ -3,6 +3,8 @@
 # Maib Payment Gateway Module for Opencart v. 3.x
 Accept Visa / Mastercard / Apple Pay / Google Pay on your store with the Maib Payment Gateway Module for Opencart v. 3.x
 
+Download module on [opencart.com](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44246)
+
 ## Description
 You can familiarize yourself with the integration steps and website requirements [here](https://docs.maibmerchants.md/en/integration-steps-and-requirements).
 
