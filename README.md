@@ -12,11 +12,6 @@ To process real payments, you must have the e-commerce contract signed and compl
 
 After signing the contract, you will receive access to the maibmerchants platform and be able to activate the Production Project.
 
-### Steps to activate the Production Project
-1. Completed Profile
-2. Validated Profile
-3. E-commerce contract 
-
 ## Functional
 **Online payments**: Visa / Mastercard / Apple Pay / Google Pay.
 
