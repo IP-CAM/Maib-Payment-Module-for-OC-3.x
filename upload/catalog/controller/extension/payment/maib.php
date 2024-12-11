@@ -64,7 +64,7 @@ class ControllerExtensionPaymentMaib extends Controller
         $fail_url = $this->url->link("extension/payment/maib/fail");
         $callback_url = $this->url->link("extension/payment/maib/callback");
 
-        $amount = $order_info["total"] * $order_info['currency_value'];
+        $amount = round($order_info["total"] * $order_info['currency_value'], 2);
         $currency = $order_info["currency_code"];
         $description = [];
         $product_items = [];
@@ -75,7 +75,7 @@ class ControllerExtensionPaymentMaib extends Controller
             $product_items[] = [
                 "id" => $product["product_id"],
                 "name" => $product["name"],
-                "price" => $product["price"],
+                "price" => round($product["price"], 2),
                 "quantity" => (float) number_format(
                     $product["quantity"],
                     1,
