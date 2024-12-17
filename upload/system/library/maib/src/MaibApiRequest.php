@@ -473,10 +473,6 @@ class MaibApi
             throw new PaymentException("Invalid 'description' parameter. Should be a string and not exceed 124 characters.");
         }
 
-        if (isset($data['clientName']) && (!is_string($data['clientName']) || strlen($data['clientName']) > 128))
-        {
-            throw new PaymentException("Invalid 'clientName' parameter. Should be a string and not exceed 128 characters.");
-        }
         if (isset($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL))
         {
             throw new PaymentException("Invalid 'email' parameter. Please provide a valid email address.");
@@ -504,10 +500,6 @@ class MaibApi
                 if (isset($item['id']) && (!is_string($item['id']) || strlen($item['id']) > 36))
                 {
                     throw new PaymentException("Invalid 'id' parameter in the 'items' array. Should be a string and not exceed 36 characters.");
-                }
-                if (isset($item['name']) && (!is_string($item['name']) || strlen($item['name']) > 128))
-                {
-                    throw new PaymentException("Invalid 'name' parameter in the 'items' array. Should be a string and not exceed 128 characters.");
                 }
                 if ((isset($item['price'])) && (!is_numeric($item['price']) || $item['price'] < 0 || is_string($item['price'])))
                 {
