@@ -473,10 +473,6 @@ class MaibApi
             throw new PaymentException("Invalid 'description' parameter. Should be a string and not exceed 124 characters.");
         }
 
-        if (isset($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL))
-        {
-            throw new PaymentException("Invalid 'email' parameter. Please provide a valid email address.");
-        }
         if (isset($data['phone']) && (!is_string($data['phone']) || strlen($data['phone']) > 40))
         {
             throw new PaymentException("Invalid 'phone' parameter. Phone number should not exceed 40 characters.");
